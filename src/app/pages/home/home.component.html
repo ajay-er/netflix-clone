@@ -2,10 +2,11 @@
 <div class="container-fluid">
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-inner">
-          <div class="carousel-item active"
+          <div class="carousel-item"
           data-bs-interval="10000"
           *ngFor="let banner of bannerResult,let i = index"
-          [ngClass]="{ active: i === 1 }">
+          [ngClass]="{active:i===1}"
+          >
             <img src="https://image.tmdb.org/t/p/original/{{banner.backdrop_path}}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h2>{{banner.original_title}}</h2>

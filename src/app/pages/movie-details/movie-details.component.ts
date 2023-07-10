@@ -34,7 +34,7 @@ export class MovieDetailsComponent {
   getMovieDetails(id:string) {
 
     this.movieDetails = this.service.getMovieDetails(id).subscribe((result) => {
-       
+
       this.movieDetails = result;
 
     })
@@ -46,16 +46,15 @@ export class MovieDetailsComponent {
     
     this.service.getMovieVideo(id).subscribe((result) => {
       
-      result.results.forEach((element:any) => {
-        
-        if (element.type === "Trailer") {
+      result.results.forEach((element: any) => {
+
+        if (element.type === "Trailer" || element.type === "Teaser"  ) {
           
           this.movieVideoResult = element.key;
 
         }
 
       });
-
 
     })
 
@@ -64,7 +63,7 @@ export class MovieDetailsComponent {
   getMovieCast(id: string) {
     
     this.service.getMovieCast(id).subscribe((result) => {
-      
+
       this.movieCastDetails = result.cast;
 
     })

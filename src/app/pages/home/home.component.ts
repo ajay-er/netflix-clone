@@ -61,8 +61,6 @@ export class HomeComponent {
     this.service.trendingMovieApiData().subscribe((result) => {
       
       this.trendingMovies = result.results;
-
-      console.log(result);
       
     })
 
