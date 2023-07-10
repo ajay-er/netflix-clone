@@ -50,7 +50,7 @@ export class HomeComponent {
     this.service.bannerApiData().subscribe((result) => {
 
       this.bannerResult = result.results;
-      
+
     })
 
   }
@@ -61,7 +61,7 @@ export class HomeComponent {
     this.service.trendingMovieApiData().subscribe((result) => {
       
       this.trendingMovies = result.results;
-      
+
     })
 
   }

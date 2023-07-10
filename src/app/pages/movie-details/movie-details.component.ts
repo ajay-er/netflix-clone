@@ -48,6 +48,8 @@ export class MovieDetailsComponent {
       
       result.results.forEach((element: any) => {
 
+        console.log(element);
+
         if (element.type === "Trailer" || element.type === "Teaser"  ) {
           
           this.movieVideoResult = element.key;

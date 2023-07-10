@@ -5,11 +5,14 @@
           <div class="carousel-item"
           data-bs-interval="10000"
           *ngFor="let banner of bannerResult,let i = index"
-          [ngClass]="{active:i===1}"
+          [ngClass]="{active:i === 0}"
           >
-            <img src="https://image.tmdb.org/t/p/original/{{banner.backdrop_path}}" class="d-block w-100" alt="...">
+            <img src="https://image.tmdb.org/t/p/original/{{banner.backdrop_path}}" 
+            class="d-block w-100" alt="..." >
             <div class="carousel-caption d-none d-md-block">
-              <h2>{{banner.original_title}}</h2>
+              <h2 class="bannerTitle" [routerLink]="['/movie',banner.id]">
+                {{banner.original_title ? banner.original_title : banner.name}}
+              </h2>
               <p>{{banner.overview}}</p>
             </div>
           </div>
@@ -33,7 +36,7 @@
         <div class="rowPoster mt-3 p-2">
             <ng-container  *ngFor="let trending of trendingMovies">
                 <img src="https://image.tmdb.org/t/p/original/{{trending.poster_path}}" 
-                class="rowimg largeposter" alt="..."
+                class="rowimg " alt="..."
                 [routerLink]="['/movie',trending.id]">
             </ng-container>
 
@@ -46,7 +49,7 @@
         <div class="rowPoster mt-3 p-2">
             <ng-container  *ngFor="let adventure of adventureMovies">
                 <img src="https://image.tmdb.org/t/p/original/{{adventure.poster_path}}" 
-                class="rowimg largeposter" alt="..."
+                class="rowimg " alt="..."
                 [routerLink]="['/movie',adventure.id]">
             </ng-container>
         </div>
@@ -58,7 +61,7 @@
           <div class="rowPoster mt-3 p-2">
               <ng-container  *ngFor="let animation of animationMovies">
                   <img src="https://image.tmdb.org/t/p/original/{{animation.poster_path}}" 
-                  class="rowimg largeposter" alt="..."
+                  class="rowimg " alt="..."
                   [routerLink]="['/movie',animation.id]">
               </ng-container>
           </div>
@@ -70,7 +73,7 @@
         <div class="rowPoster mt-3 p-2">
             <ng-container  *ngFor="let scienceFiction of scienceFictionMovies">
                 <img src="https://image.tmdb.org/t/p/original/{{scienceFiction.poster_path}}" 
-                class="rowimg largeposter" alt="..."
+                class="rowimg " alt="..."
                 [routerLink]="['/movie',scienceFiction.id]">
             </ng-container>
         </div>
@@ -82,7 +85,7 @@
         <div class="rowPoster mt-3 p-2">
             <ng-container  *ngFor="let action of actionMovies">
                 <img src="https://image.tmdb.org/t/p/original/{{action.poster_path}}" 
-                class="rowimg largeposter" alt="..."
+                class="rowimg " alt="..."
                 [routerLink]="['/movie',action.id]">
             </ng-container>
         </div>
@@ -94,7 +97,7 @@
         <div class="rowPoster mt-3 p-2">
             <ng-container  *ngFor="let thriller of thrillerMovies">
                 <img src="https://image.tmdb.org/t/p/original/{{thriller.poster_path}}" 
-                class="rowimg largeposter" alt="..."
+                class="rowimg " alt="..."
                 [routerLink]="['/movie',thriller.id]">
             </ng-container>
         </div>
@@ -107,7 +110,7 @@
         <div class="rowPoster mt-3 p-2">
             <ng-container  *ngFor="let comedy of comedyMovies">
                 <img src="https://image.tmdb.org/t/p/original/{{comedy.poster_path}}" 
-                class="rowimg largeposter" alt="..."
+                class="rowimg " alt="..."
                 [routerLink]="['/movie',comedy.id]">
             </ng-container>
         </div>
@@ -119,8 +122,9 @@
         <div class="rowPoster mt-3 p-2">
             <ng-container  *ngFor="let doc of documentedMovies">
                 <img src="https://image.tmdb.org/t/p/original/{{doc.poster_path}}" 
-                class="rowimg largeposter" alt="..."
-                [routerLink]="['/movie',doc.id]">
+                class="rowimg" alt="..."
+                [routerLink]="['/movie',doc.id]"
+                >
             </ng-container>
         </div>
       </div>
