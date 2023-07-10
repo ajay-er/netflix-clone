@@ -13,11 +13,20 @@ export class MovieDetailsComponent {
   
   movieDetails: any = [];
 
+  movieVideoResult: any = [];
+
+  movieCastDetails: any = [];
+
+
   ngOnInit() {
 
     let paramId: string = this.router.snapshot.paramMap.get('id')!;
 
     this.getMovieDetails(paramId);
+
+    this.getVideo(paramId);
+
+    this.getMovieCast(paramId);
 
   }
   
@@ -30,6 +39,36 @@ export class MovieDetailsComponent {
 
     })
       
+  }
+
+
+  getVideo(id: string) {
+    
+    this.service.getMovieVideo(id).subscribe((result) => {
+      
+      result.results.forEach((element:any) => {
+        
+        if (element.type === "Trailer") {
+          
+          this.movieVideoResult = element.key;
+
+        }
+
+      });
+
+
+    })
+
+  }
+
+  getMovieCast(id: string) {
+    
+    this.service.getMovieCast(id).subscribe((result) => {
+      
+      this.movieCastDetails = result.cast;
+
+    })
+
   }
 
 }
