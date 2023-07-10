@@ -8,6 +8,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieApiService } from './service/movie-api.service';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { MovieApiService } from './service/movie-api.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [MovieApiService],
   bootstrap: [AppComponent]

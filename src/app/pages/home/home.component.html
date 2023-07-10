@@ -32,7 +32,8 @@
         <div class="rowPoster mt-3 p-2">
             <ng-container  *ngFor="let trending of trendingMovies">
                 <img src="https://image.tmdb.org/t/p/original/{{trending.poster_path}}" 
-                class="rowimg largeposter" alt="...">
+                class="rowimg largeposter" alt="..."
+                [routerLink]="['/movie',trending.id]">
             </ng-container>
 
         </div>

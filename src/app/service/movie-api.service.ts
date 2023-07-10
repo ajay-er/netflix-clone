@@ -31,11 +31,22 @@ export class MovieApiService {
     
     return this.http.get(this.trendingMoviesApi);
 
+  } 
+
+  //searchmovies
+  searchMovieApiDAta(data:any): Observable<any>{
+    
+    return this.http.get( `${this.baseUrl}/search/movie?api_key=${this.apiKey}&query=${data.movieName}`);
+
   }
 
-  
 
+  //movieData
+  getMovieDetails(id:any): Observable<any>{
+    
+    return this.http.get(`${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`);
 
+  }
 
 
 }
