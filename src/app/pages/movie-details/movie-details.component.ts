@@ -17,7 +17,6 @@ export class MovieDetailsComponent {
 
   movieCastDetails: any = [];
 
-
   ngOnInit() {
 
     let paramId: string = this.router.snapshot.paramMap.get('id')!;
